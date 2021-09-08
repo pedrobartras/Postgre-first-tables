@@ -1,2 +1,2 @@
-# Postgre-first-tables
-repositório com a criação do meu primeiro banco de dados relacional
+# Primeiro Repositório
+Repositório com o intuito de commitar meus primeiros projetos.
