@@ -1,0 +1,48 @@
+import pyautogui
+import time
+import pyperclip
+
+pyautogui.PAUSE = 2
+pyautogui.press("winleft")
+pyautogui.write("chrome")
+pyautogui.press("enter")
+link = "https://drive.google.com/drive/folders/149xknr9JvrlEnhNWO49zPcw0PW5icxga"
+pyperclip.copy(link)
+pyautogui.hotkey("ctrl","v")
+pyautogui.press("enter")
+pyautogui.click(x=396, y=261, clicks=2 )
+pyautogui.click(408, y=300)
+pyautogui.click(1703, y=158)
+pyautogui.click(1564, y=519)
+
+
+import pandas as pd
+
+tabela = pd.read_excel(r"C:\Users\Usuário\Downloads\Vendas - Dez.xlsx")
+faturamento = tabela["Valor Final"].sum()
+quantidade = tabela["Quantidade"].sum()
+
+time.sleep(10)
+
+pyautogui.PAUSE = 2
+pyautogui.hotkey("ctrl", "t")
+pyautogui.write("gmail.com")
+pyautogui.press("enter")
+pyautogui.click(x=115, y=181)
+pyautogui.write("pedrosiqueirabartras@gmail.com")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("resultado projeto")
+pyautogui.press("tab")
+texto_email = f""""
+Prezado, boa noite
+Segue abaixo os valores de
+Faturamento total das lojas: R${faturamento}
+Quantidade de produtos vendidos: {quantidade}
+
+Att,
+Pedro Siqueira Bartras"""
+
+pyautogui.write(texto_email)
+
+pyautogui.hotkey("ctrl", "enter")
